@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Summary</title>
+</head>
+<body>
+    <h2>Order Summary</h2>
+    <ul>
+        <li>Product A: Quantity - {{ order.product_a_quantity }}, Total - ${{ product_a_total }}</li>
+        <li>Product B: Quantity - {{ order.product_b_quantity }}, Total - ${{ product_b_total }}</li>
+        <li>Product C: Quantity - {{ order.product_c_quantity }}, Total - ${{ product_c_total }}</li>
+    </ul>
+    <p>Subtotal: ${{ cart_total }}</p>
+    <p>Discount Applied: {{ discount_name }}, Amount: ${{ discount_amount }}</p>
+    <p>Shipping Fee: ${{ shipping_fee }}</p>
+    <p>Gift Wrap Fee: ${{ gift_wrap_fee }}</p>
+    <p>Total: ${{ total }}</p>
+</body>
+</html>

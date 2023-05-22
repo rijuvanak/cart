@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart Details</title>
+</head>
+<body>
+    <h2>Cart</h2>
+    <table>
+        <tr>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Total Amount</th>
+        </tr>
+        {% for item in cart %}
+            <tr>
+                <td>{{ item.product.name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>${{ item.product.price|mul:item.quantity }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <p>Subtotal: ${{ cart|subtotal }}</p>
+    {% if cart|discount %}
+        <p>Discount Applied: {{ cart|discount }}</p>
+    {% endif %}
+    <p>Shipping Fee: ${{ cart|shipping_fee }}</p>
+    <p>Gift Wrap Fee: ${{ cart|gift_wrap_fee }}</p>
+    <p>Total: ${{ total }}</p>
+</body>
+</html>

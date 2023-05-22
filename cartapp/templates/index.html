@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Catalog</title>
+</head>
+<body>
+    <form method="post" action="{% url 'cartapp:process_cart' %}">
+        {% csrf_token %}
+       <h2>Product A</h2>
+  Quantity: <input type="number" name="product_a_quantity" value="0"><br>
+  Gift Wrap: <input type="checkbox" name="product_a_gift_wrap"><br>
+
+  <h2>Product B</h2>
+  Quantity: <input type="number" name="product_b_quantity" value="0"><br>
+  Gift Wrap: <input type="checkbox" name="product_b_gift_wrap"><br>
+
+  <h2>Product C</h2>
+  Quantity: <input type="number" name="product_c_quantity" value="0"><br>
+  Gift Wrap: <input type="checkbox" name="product_c_gift_wrap"><br>
+
+  <br>
+  <button type="submit">Place Order</button>
+</form>
+</body>
+</html>
